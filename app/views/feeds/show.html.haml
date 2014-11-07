@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Category:
+  = @feed.category
+%p
+  %b Url:
+  = @feed.url
+%p
+  %b Category:
+  = @feed.category_id
+
+= link_to 'Edit', edit_feed_path(@feed)
+\|
+= link_to 'Back', feeds_path
