@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'omniauth-google-oauth2'
 
 gem 'devise'
+gem 'rails_12factor'
 
 gem 'carrierwave', "0.9.0"
 gem 'rmagick'
