@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141107155200) do
+ActiveRecord::Schema.define(:version => 20141109165711) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(:version => 20141107155200) do
     t.integer  "feed_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "article_id"
+    t.string   "entry_id"
   end
 
   create_table "bookmarks", :force => true do |t|

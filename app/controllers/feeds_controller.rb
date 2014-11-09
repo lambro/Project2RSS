@@ -1,5 +1,7 @@
 class FeedsController < ApplicationController
   before_filter :set_feed, only: [:show, :edit, :update, :destroy]
+  require "feedjira"
+  respond_to :html, :xml, :json
 
   def index
     @feeds = Feed.all
@@ -19,9 +21,13 @@ class FeedsController < ApplicationController
   end
 
   def create
-    @feed = Feed.new(params[:feed])
-    @feed.save
-    respond_with(@feed)
+    @feed = Feed.new
+    @url = Feedjira::Feed.fetch_and_parse(params[:feed]['url'])
+    @feed.title = @url.title
+    @feed.url = @url.url
+    @feed.summary = @url.summary
+      @feed.save
+      respond_with(@feed)
   end
 
   def update

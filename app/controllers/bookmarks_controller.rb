@@ -1,6 +1,8 @@
 class BookmarksController < ApplicationController
   before_filter :set_bookmark, only: [:show, :edit, :update, :destroy]
 
+  respond_to :html, :xml, :json
+
   def index
     @bookmarks = Bookmark.all
     respond_with(@bookmarks)

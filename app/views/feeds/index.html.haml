@@ -2,7 +2,7 @@
 
 %table
   %tr
-    %th Category
+    %th Title
     %th Url
     %th Category
     %th
@@ -11,7 +11,7 @@
 
   - @feeds.each do |feed|
     %tr
-      %td= feed.category
+      %td= feed.title
       %td= feed.url
       %td= feed.category_id
       %td= link_to 'Show', feed

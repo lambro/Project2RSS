@@ -10,16 +10,16 @@
     = f.label :title
     = f.text_field :title
   .field
-    = f.label :description
-    = f.text_area :description
+    = f.label :summary
+    = f.text_area :summary
   .field
     = f.label :url
     = f.text_area :url
   .field
-    = f.label :picture
-    = f.text_area :picture
+    = f.label :image
+    = f.text_area :image
   .field
-    = f.label :feed_id
-    = f.number_field :feed_id
+    = f.label :article_id
+    = f.number_field :article_id
   .actions
     = f.submit 'Save'

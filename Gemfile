@@ -32,7 +32,7 @@ gem 'rmagick'
 gem "ransack"
 
 gem 'will_paginate', '~> 3.0'
-
+gem 'feedjira'
 gem 'haml-rails'
 
 group :development, :test do

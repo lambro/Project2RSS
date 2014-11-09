@@ -1,6 +1,8 @@
 class SubscriptionsController < ApplicationController
   before_filter :set_subscription, only: [:show, :edit, :update, :destroy]
 
+  respond_to :html, :xml, :json
+  
   def index
     @subscriptions = Subscription.all
     respond_with(@subscriptions)
