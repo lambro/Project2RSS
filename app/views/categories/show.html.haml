@@ -1,13 +1,15 @@
 %p#notice= notice
 
-%h1
-  = @category.title
-%p
-  %b Description:
-  = @category.description
-%p
-  %b Picture:
-  = @category.picture
+.category_header
+  =image_tag @category.picture, class: "cat_head"
+  %h1
+    = @category.title
+
+#category_container.container
+  %p
+    = @category.description
+  %p
+    =image_tag @category.picture
 
 = link_to 'Edit', edit_category_path(@category)
 \|

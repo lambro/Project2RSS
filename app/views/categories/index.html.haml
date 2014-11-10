@@ -8,18 +8,11 @@
 
 = link_to 'New Category', new_category_path
 
-/ #galleryherepls
-/   %img{:alt => "Fashion", "data-fullsrc" => "fashion.jpg", :src => "/assets/fashion.jpg"}/
-/   %img{:alt => "Sport", "data-fullsrc" => "sport.jpg", :src => "/assets/sport.jpg"}/
-/   %img{:alt => "Image", "data-desc" => "Example", "data-fullsrc" => "politics.jpg", :src => "/assets/politics.jpg"}/
-/   %img{:alt => "Image", "data-desc" => "Example", "data-fullsrc" => "news.jpg", :src => "/assets/news.jpg"}/
-/   %img{:alt => "Image", "data-desc" => "Example", "data-fullsrc" => "entertainment.jpg", :src => "/assets/entertainment.jpg"}/
-/   %img{:alt => "Image", "data-desc" => "Example", "data-fullsrc" => "tech.jpg", :src => "/assets/tech.jpg"}/
-
 %script
   $('#galleryherepls').galereya({
   disableSliderOnClick: true,
   wave: false,
+  spacing: 10,
   onCellClick: function(e) {
   var categoryId = $(e.currentTarget).find("img").data("id")
   window.location.href = window.location.origin + "/categories/" + categoryId
