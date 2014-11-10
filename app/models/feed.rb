@@ -1,6 +1,6 @@
 class Feed < ActiveRecord::Base
 
-  attr_accessible :category, :category_id, :url
+  attr_accessible :category, :category_id, :url, :title
 
   has_many :articles
   has_many :subscriptions

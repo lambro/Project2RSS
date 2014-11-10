@@ -9,6 +9,7 @@ class FeedsController < ApplicationController
   end
 
   def show
+    @articles = @feed.articles
     respond_with(@feed)
   end
 

@@ -8,7 +8,16 @@
   = @feed.url
 %p
   %b Summary:
-  = @feed.summary
+  = @feed.description
+
+%p
+  %b Summary:
+  - @articles.each do |a|
+    = a.title 
+    %br
+    = a.url
+    %br
+
 
 = link_to 'Edit', edit_feed_path(@feed)
 \|

@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(:version => 20141109165711) do
     t.integer  "feed_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "article_id"
     t.string   "entry_id"
   end
 
