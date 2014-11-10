@@ -1,22 +1,13 @@
 %h1 Feeds
 
-%table
-  %tr
-    %th Title
-    %th Url
-    %th Category
-    %th
-    %th
-    %th
-
-  - @feeds.each do |feed|
-    %tr
-      %td= feed.title
-      %td= feed.url
-      %td= feed.category_id
-      %td= link_to 'Show', feed
-      %td= link_to 'Edit', edit_feed_path(feed)
-      %td= link_to 'Destroy', feed, :method => :delete, :data => { :confirm => 'Are you sure?' }
+- @feeds.each do |feed|
+  #feed
+    = feed.title
+    = feed.url
+    = feed.category_id
+    = link_to 'Show', feed
+    = link_to 'Edit', edit_feed_path(feed)
+    = link_to 'Destroy', feed, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
