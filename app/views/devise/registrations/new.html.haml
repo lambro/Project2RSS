@@ -6,6 +6,15 @@
     %br/
     = f.email_field :email, autofocus: true
   .field
+  = f.label :name
+    %br/
+    .field
+    = f.text_field :name
+    .field
+    = f.label :image
+    %br/
+    = f.text_field :image
+    .field
     = f.label :password
     - if @validatable
       %em
