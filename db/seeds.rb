@@ -6,11 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-c1 = Category.create!(title: "News")
-c2 = Category.create!(title: "Sport")
-c3 = Category.create!(title: "Tech")
-c4 = Category.create!(title: "Geography")
-c5 = Category.create!(title: "Design")
+Category.destroy_all
+Feed.destroy_all
+
+c1 = Category.create!(title: "News", description: "The latest news from all around the world", picture: "news.jpg")
+c2 = Category.create!(title: "Sport", description: "Sport articles", picture: "sport.jpg")
+c3 = Category.create!(title: "Tech", description: "Up to date tech news", picture: "tech.jpg")
+c4 = Category.create!(title: "Politics", description: "Current politics from around the world", picture: "politics.jpg")
+c5 = Category.create!(title: "Entertainment", description: "Latest entertainment news", picture: "entertainment.jpg")
+c6 = Category.create!(title: "Fashion", description: "Latest fashion news", picture: "fashion.jpg")
 
 
 f1 = Feed.create!(url:"http://feeds.bbci.co.uk/news/world/rss.xml",title:"BBC", category_id: c1.id)
