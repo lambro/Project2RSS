@@ -58,6 +58,16 @@ Devise.setup do |config|
     image_size: 30
   }
 
+  config.omniauth :twitter, ENV["TWITTER_ID"], ENV["TWITTER_SECRET"]
+  #     {
+  #   :secure_image_url => 'true',
+  #   :image_size => '24x24',
+  #   :authorize_params => {
+  #     :force_login => 'true',
+  #     :lang => 'en'
+  #   }
+  # }
+
   # Tell if authentication through HTTP Auth is enabled. False by default.
   # It can be set to an array that will enable http authentication only for the
   # given strategies, for example, `config.http_authenticatable = [:database]` will
