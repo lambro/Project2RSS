@@ -15,7 +15,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if @user.persisted?
       flash[:notice] = "You successfully logged in using twitter!"
-      sign_in_and_redirect @user, event: :authentication
+      sign_in(@user) 
+      redirect_to root_path, event: :authentication
     else
       session["devise.twitter_data"] = request.env["omniauth.auth"].except("extra")  
       redirect_to new_user_registration_url
