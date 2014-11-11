@@ -1,23 +1,25 @@
-%h1 Listing categories
+.header
+  %h1 
+    Feed.
+    %span{class: "me"}
+      me
 
-%table
-  %tr
-    %th Title
-    %th Description
-    %th Picture
-    %th
-    %th
-    %th
-
+#galleryherepls
   - @categories.each do |category|
-    %tr
-      %td= category.title
-      %td= category.description
-      %td= category.picture
-      %td= link_to 'Show', category
-      %td= link_to 'Edit', edit_category_path(category)
-      %td= link_to 'Destroy', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    / %h1= link_to category.title, category
+    / = category.description
+    = image_tag category.picture, class: "category_picture", alt: category.title, "data-fullsrc" =>  category.picture, "data-id" => category.id
 
-%br
+/ = link_to 'New Category', new_category_path
 
-= link_to 'New Category', new_category_path
+%script
+  $('#galleryherepls').galereya({
+  disableSliderOnClick: true,
+  wave: false,
+  spacing: 10,
+  cellFadeInSpeed: 500,
+  onCellClick: function(e) {
+  var categoryId = $(e.currentTarget).find("img").data("id")
+  window.location.href = window.location.origin + "/categories/" + categoryId
+  }
+  });

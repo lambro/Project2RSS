@@ -5,6 +5,7 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    %link{:href => "http://fonts.googleapis.com/css?family=The+Girl+Next+Door|Offside|Atomic+Age|Londrina+Outline|Hind|Over+the+Rainbow", :rel => "stylesheet", :type => "text/css"}/
   %body
     #container
       .user-nav
@@ -14,6 +15,11 @@
           = link_to 'Edit Profile', edit_user_registration_path
           \|
           = link_to 'Logout',  destroy_user_session_path, method: :delete
+          \|
+          =link_to 'Feeds', feeds_path
+          \|
+          =link_to 'Your Subscriptions', subscriptions_path
+
         - else
           = link_to 'Sign up', new_user_registration_path
           \|
@@ -21,4 +27,6 @@
 
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
+
+      #main_page_content  
       = yield

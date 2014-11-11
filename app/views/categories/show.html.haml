@@ -1,15 +1,24 @@
 %p#notice= notice
 
-%p
-  %b Title:
-  = @category.title
-%p
-  %b Description:
-  = @category.description
-%p
-  %b Picture:
-  = @category.picture
+.category_header.header
+  =image_tag @category.title.downcase + "_header.jpg", class: "cat_head"
+  %h1
+    EAT. 
+    %span{class: "me"}
+      = @category.title
+
+#category_container.container
+  %h2
+    = @category.description
+
+
+  - @category.feeds.each do |c|
+    .feeds_container
+      = c.title
+
 
 = link_to 'Edit', edit_category_path(@category)
 \|
 = link_to 'Back', categories_path
+
+
