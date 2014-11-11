@@ -1,4 +1,7 @@
-%h1 Categories
+%h1 
+  Feed.
+  %span{class: "me"}
+    me
 
 #galleryherepls
   - @categories.each do |category|
@@ -6,13 +9,14 @@
     / = category.description
     = image_tag category.picture, class: "category_picture", alt: category.title, "data-fullsrc" =>  category.picture, "data-id" => category.id
 
-= link_to 'New Category', new_category_path
+/ = link_to 'New Category', new_category_path
 
 %script
   $('#galleryherepls').galereya({
   disableSliderOnClick: true,
   wave: false,
   spacing: 10,
+  cellFadeInSpeed: 500,
   onCellClick: function(e) {
   var categoryId = $(e.currentTarget).find("img").data("id")
   window.location.href = window.location.origin + "/categories/" + categoryId

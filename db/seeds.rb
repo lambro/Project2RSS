@@ -15,6 +15,8 @@ c3 = Category.create!(title: "Tech", description: "Up to date tech news", pictur
 c4 = Category.create!(title: "Politics", description: "Current politics from around the world", picture: "politics.jpg")
 c5 = Category.create!(title: "Entertainment", description: "Latest entertainment news", picture: "entertainment.jpg")
 c6 = Category.create!(title: "Fashion", description: "Latest fashion news", picture: "fashion.jpg")
+c7 = Category.create!(title: "Science & Environment", description: "Latest Science news", picture: "fashion.jpg")
+c8 = Category.create!(title: "Health", description: "Latest fashion news", picture: "fashion.jpg")
 
 
 f1 = Feed.create!(url:"http://feeds.bbci.co.uk/news/world/rss.xml",title:"BBC", category_id: c1.id)
