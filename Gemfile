@@ -23,6 +23,7 @@ end
 gem 'jquery-rails'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 
 gem 'devise'
 gem 'rails_12factor'

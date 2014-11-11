@@ -59,14 +59,9 @@ Devise.setup do |config|
   }
 
   config.omniauth :twitter, ENV["TWITTER_ID"], ENV["TWITTER_SECRET"]
-  #     {
-  #   :secure_image_url => 'true',
-  #   :image_size => '24x24',
-  #   :authorize_params => {
-  #     :force_login => 'true',
-  #     :lang => 'en'
-  #   }
-  # }
+  
+  config.omniauth :facebook, ENV["FACEBOOK_ID"], ENV["FACEBOOK_SECRET"],
+  :scope => 'email,user_birthday,read_stream', :display => 'popup'
 
   # Tell if authentication through HTTP Auth is enabled. False by default.
   # It can be set to an array that will enable http authentication only for the
