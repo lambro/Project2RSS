@@ -1,18 +1,20 @@
 %p#notice= notice
 
-.category_header
+.category_header.header
   =image_tag @category.title.downcase + "_header.jpg", class: "cat_head"
   %h1
-    = "EAT." + @category.title
+    EAT. 
+    %span{class: "me"}
+      = @category.title
 
 #category_container.container
   %h2
     = @category.description
 
+
   - @category.feeds.each do |c|
-    = c.title
-    %br
-    = c.description
+    .feeds_container
+      = c.title
 
 
 = link_to 'Edit', edit_category_path(@category)
