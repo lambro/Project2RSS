@@ -82,7 +82,6 @@ a{
   color:black;
   top:-75px;
   right:-30px;
-  background:white;
   overflow:hidden;
   clip:rect(0,900px,0,0); 
   -webkit-animation:noise-anim 2s infinite linear alternate-reverse;
@@ -103,7 +102,6 @@ a{
   color:black;
   top:-75px;
   right:-32px;
-  background:white;
   overflow:hidden;
   clip:rect(0,900px,0,0); 
   -webkit-animation:noise-anim-2 3s infinite linear alternate-reverse;
@@ -137,10 +135,17 @@ input{
       width:50px;
       margin-right: 3%;
       display: inline-block;
+      -webkit-filter: invert(0);
+      -webkit-transition: all 1s ease;
+      -moz-transition: all 1s ease;
+      -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+      transition: all 1s ease;
+      }&:hover{
+      -webkit-filter: invert(1);
       }
-    a:hover{
+      a:hover{
       background-color:transparent;
-
     }
   }
 }
