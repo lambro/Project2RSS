@@ -2,12 +2,7 @@
 
 - @feeds.each do |feed|
   #feed_container.container
-    = feed.title
-    = feed.url
-    = feed.category_id
-    = link_to 'Show', feed
-    = link_to 'Edit', edit_feed_path(feed)
-    = link_to 'Destroy', feed, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    = link_to feed.title, feed
 
 %br
 

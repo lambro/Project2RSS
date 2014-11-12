@@ -6,9 +6,19 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
     %link{:href => "http://fonts.googleapis.com/css?family=The+Girl+Next+Door|Offside|Atomic+Age|Londrina+Outline|Hind|Over+the+Rainbow", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", :rel => "stylesheet"}/
   %body
-    #container
-      .user-nav
+    .header
+      %h1 
+        Feed.
+        %span{class: "me glitch", data: {text: "me"}}
+          me
+      %p Menu
+      %i#show_hide.fa.fa-circle-o-notch.btn
+
+
+    #user_nav.user-nav
+      #menu_items
         - if user_signed_in?
           Logged in as
           %b= current_user.email
@@ -18,15 +28,22 @@
           \|
           =link_to 'Feeds', feeds_path
           \|
-          =link_to 'Your Subscriptions', subscriptions_path
+          =link_to 'Categories', categories_path
+          \|
+          =link_to 'Bookmarks', bookmarks_path
+          \|
+          =link_to 'Subscriptions', subscriptions_path
 
         - else
           = link_to 'Sign up', new_user_registration_path
           \|
           = link_to 'Login', new_user_session_path
 
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}"
-
+    - flash.each do |name, msg|
+      = content_tag :div, msg, :id => "flash_#{name}"
+    
+    .container
       #main_page_content  
       = yield
+
+    .footer
