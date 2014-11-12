@@ -49,62 +49,16 @@ a{
     text-align: center;
     font-size: 7em;
     font-family: 'Atomic Age', cursive;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
     margin-right:100px;
     .me{
       font-family: 'The Girl Next Door';
-      letter-spacing: -4px;
+      letter-spacing: -5px;
+      margin-left: -35px;
       display:inline-block;
       padding:0;
     }
   }
-}
-
-.glitch{
-  color:black;
-  font-size:100px;
-  position:relative;
-  width:70px;
-  margin:0;
-}
-@-webkit-keyframes noise-anim{
-  $steps:20;
-  @for $i from 0 through $steps{
-    #{percentage($i*(1/$steps))}{
-      clip:rect(random(100)+px,9999px,random(100)+px,0);
-    }
-  }
-}
-.glitch:after{
-  content:attr(data-text);
-  position:absolute;
-  text-shadow:-1px 0 red;
-  color:black;
-  top:-75px;
-  right:-30px;
-  overflow:hidden;
-  clip:rect(0,900px,0,0); 
-  -webkit-animation:noise-anim 2s infinite linear alternate-reverse;
-}
-
-@-webkit-keyframes noise-anim-2{
-  $steps:20;
-  @for $i from 0 through $steps{
-    #{percentage($i*(1/$steps))}{
-      clip:rect(random(100)+px,9999px,random(100)+px,0);
-    }
-  }
-}
-.glitch:before{
-  content:attr(data-text);
-  position:absolute;
-  text-shadow:1px 0 blue;
-  color:black;
-  top:-75px;
-  right:-32px;
-  overflow:hidden;
-  clip:rect(0,900px,0,0); 
-  -webkit-animation:noise-anim-2 3s infinite linear alternate-reverse;
 }
 
 // ----page specific ----
