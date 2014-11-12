@@ -21,9 +21,10 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    @bookmark = Bookmark.new(params[:bookmark])
+    @bookmark = Bookmark.new(user_id: current_user.id, article_id: params[:bookmark][:article_id], is_bookmarked: true)
+    # @bookmark.user_id = current_user.id
     @bookmark.save
-    respond_with(@bookmark)
+    respond_with(@bookmark) 
   end
 
   def update

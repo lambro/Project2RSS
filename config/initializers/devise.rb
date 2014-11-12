@@ -53,7 +53,7 @@ Devise.setup do |config|
   # given strategies, for example, `config.params_authenticatable = [:database]` will
   # enable it only for database (email + password) authentication.
   # config.params_authenticatable = true
-  config.omniauth :google_oauth2, ENV["GOOGLE_AUTH_CLIENT_ID"], ENV["GOOGLE_AUTH_CLIENT_SECRET"], scope: "email, profile", client_options: { image_aspect_ratio: "square",
+  config.omniauth :google_oauth2, ENV["GOOGLE_AUTH_CLIENT_ID_H"], ENV["GOOGLE_AUTH_CLIENT_SECRET_H"], scope: "email, profile", client_options: { image_aspect_ratio: "square",
     image_aspect_ratio: "square",
     image_size: 30
   }
