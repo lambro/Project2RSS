@@ -20,7 +20,6 @@ h1{
     letter-spacing: -4px;
     display:inline-block;
     padding:0;
-    margin-left:-15px;
   }
 }
 
@@ -31,6 +30,11 @@ h2{
 a{
   font-family: 'Atomic Age', cursive;
   margin-right: 1%;
+  &:hover{
+    text-decoration: none;
+    color:rgba(164, 33, 26, 1.0);
+    background-color:white;
+  }
 }
 
 // --- general and main page header settings ----
@@ -51,6 +55,7 @@ a{
     font-family: 'Atomic Age', cursive;
     letter-spacing: 5px;
     margin-right:100px;
+    margin-left:-15px;
     .me{
       font-family: 'The Girl Next Door';
       letter-spacing: -5px;
@@ -62,6 +67,25 @@ a{
 }
 
 // ----page specific ----
+
+// ---- articles page ----
+.article{
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-bottom: solid 1px rgba(164, 33, 26, 1.0);
+  margin-top:0;
+    i{
+      color: rgba(164, 33, 26, 1.0);
+    }
+    i:hover{
+      color: rgba(60, 92, 137, 1.0);
+    }
+    .not-checked{
+      color:transparent;
+    }
+}
+
+
 
 
 // ---- log in / sign up page ----

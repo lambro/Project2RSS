@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article.summary = @article.summary.sub(/<.*?>/," ")
     respond_with(@article)
   end
 

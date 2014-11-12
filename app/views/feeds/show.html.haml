@@ -1,22 +1,28 @@
 %p#notice= notice
 
-%p
-  %b Title:
-  = @feed.title
-%p
-  %b Url:
-  = @feed.url
-%p
-  %b Summary:
-  = @feed.description
+.container-fluid
+  %p
+    %h1= @feed.title
 
-%p
-  %b Summary:
-  - @articles.each do |a|
-    = a.title 
-    %br
-    = a.url
-    %br
+  %p
+    - @articles.each do |a|
+      .col-xs-6.article.text-justify
+        = link_to a.title, a.url
+        %br
+        %hr
+        = strip_tags(a.summary)
+        %br
+        %br
+        %span.fa-stack.fa-lg
+          %i.fa.fa-square-o.fa-stack-2x
+          %i.fa.fa-check.fa-stack-1x.not-checked
+        bookmark
+        %br
+        %span.fa-stack.fa-lg
+          %i.fa.fa-square-o.fa-stack-2x
+          %i.fa.fa-check.fa-stack-1x.not-checked
+        Favourite
+        = a.image
 
 
 = link_to 'Edit', edit_feed_path(@feed)
