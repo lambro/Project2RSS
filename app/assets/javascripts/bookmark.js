@@ -20,18 +20,21 @@ function bookmark(){
     $this.removeClass('bookmark-article')
     $this.addClass('bookmarked')
     $this.attr('data-id', data.id)
-
+    console.log(data.id)
   })
 }
 
 function unBookmark(){
   $this = $(this)
   $bookmarkId = $this.data("id");
+
+  console.log($bookmarkId)
   request("PUT", "/bookmarks/"+ $bookmarkId, {
     bookmark:{
     is_bookmarked: false,
     }
   }).success(function(){
+    console.log('hey')
     $this.removeClass('bookmarked')
     $this.addClass('rebookmark')
     $this.attr('data-id', $bookmarkId)
