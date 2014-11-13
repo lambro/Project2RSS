@@ -20,7 +20,8 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    @subscription = Subscription.new(params[:subscription])
+    @subscription = Subscription.new( params[:subscription])
+    @subscription.user_id=current_user.id
     @subscription.save
     respond_with(@subscription)
   end
