@@ -21,6 +21,7 @@
       #menu_items
         - if user_signed_in?
           %h3= current_user.name
+          = image_tag current_user.image.thumb.url
           %br
           = link_to 'Edit Profile', edit_user_registration_path
           = link_to 'Logout',  destroy_user_session_path, method: :delete

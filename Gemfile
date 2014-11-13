@@ -29,7 +29,7 @@ gem 'devise'
 gem 'rails_12factor'
 
 gem 'carrierwave', "0.9.0"
-gem 'rmagick'
+gem 'rmagick', :require => 'RMagick'
 
 gem "ransack"
 
