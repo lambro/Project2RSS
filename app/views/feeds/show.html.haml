@@ -4,25 +4,7 @@
   %p
     %h1= @feed.title
 
-  %p
-    - @articles.each do |a|
-      .col-xs-6.article.text-justify
-        = link_to a.title, a.url
-        %br
-        %hr
-        = strip_tags(a.summary)
-        %br
-        %br
-        %span.fa-stack.fa-lg.bookmark-article
-          %i.fa.fa-square-o.fa-stack-2x
-          %i.fa.fa-check.fa-stack-1x.not-checked
-        bookmark
-        %br
-        %span.fa-stack.fa-lg.favourite-article
-          %i.fa.fa-square-o.fa-stack-2x
-          %i.fa.fa-check.fa-stack-1x.not-checked
-        Favourite
-        = a.image
+  = render 'bookmarkboxes'
 
 
 = link_to 'Edit', edit_feed_path(@feed)

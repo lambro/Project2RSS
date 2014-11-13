@@ -4,7 +4,9 @@ class BookmarksController < ApplicationController
   respond_to :html, :xml, :json
 
   def index
-    @bookmarks = Bookmark.all
+    @bookmarks = current_user.bookmarks
+    bookmark_title = Bookmark.bookmark_title(@bookmarks)
+    @bookmarks_title = @bookmarks.zip(bookmark_title)
     respond_with(@bookmarks)
   end
 
@@ -24,6 +26,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(user_id: current_user.id, article_id: params[:bookmark][:article_id], is_bookmarked: true)
     # @bookmark.user_id = current_user.id
     @bookmark.save
+    @bookmark_id = @bookmark.id
     respond_with(@bookmark) 
   end
 

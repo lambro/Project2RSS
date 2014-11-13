@@ -4,7 +4,7 @@ class SubscriptionsController < ApplicationController
   respond_to :html, :xml, :json
   
   def index
-    @subscriptions = Subscription.all
+    @subscriptions = current_user.subscriptions
     respond_with(@subscriptions)
   end
 

@@ -11,7 +11,7 @@
     .header
       %h1 
         Feed.
-        %span{class: "me glitch", data: {text: "me"}}
+        %span{class: "me", data: {text: "me"}}
           me
       %p Menu
       %i#show_hide.fa.fa-circle-o-notch.btn
@@ -31,8 +31,12 @@
           =link_to 'Categories', categories_path
           \|
           =link_to 'Bookmarks', bookmarks_path
+          =raw bookmark_menu_items(@bookmarks_title)
           \|
           =link_to 'Subscriptions', subscriptions_path
+          / #subscriptions_menu_items
+          /   =@subscriptions.take(3).each do |bookmark|
+          /     link_to bookmark.article_id, bookmark
 
         - else
           = link_to 'Sign up', new_user_registration_path
@@ -45,5 +49,3 @@
     .container
       #main_page_content  
       = yield
-
-    .footer
