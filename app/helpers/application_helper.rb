@@ -16,4 +16,20 @@ module ApplicationHelper
     end
   end
 
+  def subscription_menu_items(subscriptions)
+
+    if subscriptions.present?
+      if subscriptions.count > 2
+        links = ''
+        subscriptions.take(3).each do |subscriptions|
+          links += link_to subscriptions[1], subscriptions[0]
+        end
+        links
+      else
+        "No subscriptions yet"
+      end
+
+    end
+  end
+
 end

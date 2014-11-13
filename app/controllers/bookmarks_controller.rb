@@ -4,9 +4,6 @@ class BookmarksController < ApplicationController
   respond_to :html, :xml, :json
 
   def index
-    @bookmarks = current_user.bookmarks
-    bookmark_title = Bookmark.bookmark_title(@bookmarks)
-    @bookmarks_title = @bookmarks.zip(bookmark_title)
     respond_with(@bookmarks)
   end
 

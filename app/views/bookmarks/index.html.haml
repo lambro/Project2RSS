@@ -1,13 +1,6 @@
 %h1 Your Bookmarks
 
 %table
-  %tr
-    %th Article
-    %th User
-    %th
-    %th
-    %th
-
   - @bookmarks_title.each do |bookmark|
     %tr
       %td= link_to bookmark[1], bookmark[0]
