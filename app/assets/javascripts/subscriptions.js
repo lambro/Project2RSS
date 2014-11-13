@@ -12,7 +12,6 @@ function subscribe(){
   $this = $(this)
   $feedId = $this.data("id");
   request("POST", "/subscriptions", {subscription:{feed_id:$feedId}}).success(function(data){
-    console.log(data.id)
     $this.removeClass('subscription-feed')
     $this.addClass('subscribed')
     $this.data('id', data.id)
@@ -22,7 +21,6 @@ function subscribe(){
 function unSubscribe(){
   $this = $(this)
   $subsId = $this.data("id");
-  console.log($subsId)
   request("DELETE", "/subscriptions/"+ $subsId, null).success(function(data){
 
     $this.removeClass('subscribed')
