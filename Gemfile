@@ -41,6 +41,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'hirb'
+  gem 'letter_opener'
 end
 
 # To use ActiveModel has_secure_password
