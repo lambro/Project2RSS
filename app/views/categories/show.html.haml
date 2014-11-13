@@ -16,6 +16,12 @@
     .feeds_container
       = c.title
 
+      %span.fa-stack.fa-lg.subscription-feed{"data-id" => c.id}
+        %i.fa.fa-square-o.fa-stack-2x
+        %i.fa.fa-check.fa-stack-1x.not-checked
+      subscribe
+
+
 
 = link_to 'Edit', edit_category_path(@category)
 \|
