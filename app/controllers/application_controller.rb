@@ -24,6 +24,13 @@ class ApplicationController < ActionController::Base
       @subscriptions_title = @subscriptions.zip(subscription_title)
     end
   end
+
+  def feed_url
+
+  
+    
+  end
+
 end
 
 

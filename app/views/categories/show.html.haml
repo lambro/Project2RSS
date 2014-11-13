@@ -3,23 +3,23 @@
 .category_header
   =image_tag @category.title.downcase + "_header.jpg", class: "cat_head"
   %h1
-    EAT. 
+    FEED. 
     %span{class: "me"}
       = @category.title
 
 #category_container
   %h2
-    = @category.description
+    / = @category.description
 
 
   - @category.feeds.each do |c|
     .feeds_container
-      = c.title
-
+      %h1
+        = link_to c.title, c
       %span.fa-stack.fa-lg.subscription-feed{"data-id" => c.id}
         %i.fa.fa-square-o.fa-stack-2x
         %i.fa.fa-check.fa-stack-1x.not-checked
-      subscribe
+      Subscibed?
 
 
 

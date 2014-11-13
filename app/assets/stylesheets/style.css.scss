@@ -12,6 +12,10 @@
   font-family: 'Hind', sans-serif;
 }
 
+// body{
+//   background-color:black;
+// }
+
 // feed me logo
 h1{
   font-family: 'Atomic Age', cursive;
@@ -36,6 +40,33 @@ a, .a{
     color:rgba(164, 33, 26, 1.0);
     background-color:white;
   }
+}
+
+
+.effect4
+{
+  
+}
+.effect4:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  right: 10px;
+  left: auto;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
 }
 
 // --- general and main page header settings ----
@@ -89,10 +120,15 @@ a, .a{
     .not-checked{
       color:transparent;
     }
-    .bookmarked i{
+    .bookmarked i,{
       color: rgba(60, 92, 137, 1.0);
     }
 }
+
+// ---- categories show page ----
+
+
+
 
 // ---- log in / sign up page ----
 
@@ -165,15 +201,26 @@ input{
     margin-bottom: 0;
     line-height:250px;
     vertical-align: center;
+    color:rgba(26, 45, 68, 1.0);
   }
 }
 
 #category_container{
   .feeds_container{
     width: 100%;
-    border: solid 1px black;
-    height: 100px;
+    text-align:center;
     font-family: 'Offside', cursive;
+    .subscribed i,{
+      color: rgba(60, 92, 137, 1.0);
+    }
+    .not-checked{
+      color:transparent;
+    }
+    h1{
+      display: inline-block;
+      width: 50%;
+      text-align:left;
+    }
   }
 }
 
