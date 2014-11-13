@@ -1,0 +1,31 @@
+%p
+  - @articles.each do |a|
+    .col-xs-6.article.text-justify
+      = link_to a.title, a.url
+      %br
+      %hr
+      = strip_tags(a.summary)
+      %br
+      %br
+      -if a.bookmarks.present?
+        -if a.bookmarks.last.is_bookmarked == true
+          %span.fa-stack.fa-lg.bookmark-article.bookmarked{"data-id" => a.bookmarks.last.id}
+            %i.fa.fa-square-o.fa-stack-2x
+            %i.fa.fa-check.fa-stack-1x.not-checked
+          bookmark
+        -else a.bookmarks.last.is_bookmarked == false
+          %span.fa-stack.fa-lg.rebookmark{"data-id" => a.id}
+            %i.fa.fa-square-o.fa-stack-2x
+            %i.fa.fa-check.fa-stack-1x.not-checked
+          bookmark
+      -else
+        %span.fa-stack.fa-lg.bookmark-article{"data-id" => a.id}
+          %i.fa.fa-square-o.fa-stack-2x
+          %i.fa.fa-check.fa-stack-1x.not-checked
+        bookmark
+      %br
+      %span.fa-stack.fa-lg.favouritebox{"data-id" => a.id}
+        %i.fa.fa-square-o.fa-stack-2x
+        %i.fa.fa-star.fa-stack-1x.not-checked
+      Favourite
+      = a.image
