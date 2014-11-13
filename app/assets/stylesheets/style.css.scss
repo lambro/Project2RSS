@@ -55,8 +55,8 @@ a, .a{
     font-size: 7em;
     font-family: 'Atomic Age', cursive;
     letter-spacing: 5px;
-    margin-right:100px;
-    margin-left:-15px;
+    margin-right:auto;
+    margin-left:auto;
     .me{
       font-family: 'The Girl Next Door';
       letter-spacing: -5px;
@@ -65,6 +65,11 @@ a, .a{
       padding:0;
     }
   }
+}
+
+#notice, #flash_alert, #flash_notice{
+  font-family: 'Offside', cursive;
+  margin-left:5%;
 }
 
 // ----page specific ----
@@ -98,6 +103,7 @@ input{
   background-color: white;
   padding: 1%;
   font-family: 'Offside', cursive;
+  margin:1%;
 }
 
 #links{
@@ -129,6 +135,11 @@ input{
   }
 }
 
+.new_user{
+  em, h2{
+    margin-left: 1%;
+  }
+}
 // ----categories index page ----
 
 .container{
@@ -176,10 +187,25 @@ input{
   .a{
     margin-left:1%;
     margin-right:1%;
+    cursor: pointer;
+  }
+  h3{
+    display: inline-block;
+    margin-left:1%;
+    margin-right:1%;
+  }
+  h2{
+    display: inline-block;
   }
   a{
     margin-left:1%;
     margin-right:1%;
+  }
+  a:visited{
+    color: black;
+  }
+  a:visited:hover{
+    color: rgba(164, 33, 26, 1.0)
   }
   .subs{
     display:none;
