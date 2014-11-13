@@ -11,7 +11,7 @@
     .header
       %h1 
         Feed.
-        %span{class: "me glitch", data: {text: "me"}}
+        %span{class: "me", data: {text: "me"}}
           me
       %p Menu
       %i#show_hide.fa.fa-circle-o-notch.btn
@@ -20,19 +20,26 @@
     #user_nav.user-nav
       #menu_items
         - if user_signed_in?
-          Logged in as
-          %b= current_user.email
+          %h3= current_user.name
+          %br
           = link_to 'Edit Profile', edit_user_registration_path
-          \|
           = link_to 'Logout',  destroy_user_session_path, method: :delete
-          \|
-          =link_to 'Feeds', feeds_path
-          \|
-          =link_to 'Categories', categories_path
-          \|
-          =link_to 'Bookmarks', bookmarks_path
-          \|
-          =link_to 'Subscriptions', subscriptions_path
+          %br
+          %h3=link_to 'Feeds', feeds_path
+          %i.fa.fa-graduation-cap
+          %h3=link_to 'Categories', categories_path
+          %i.fa.fa-newspaper-o
+          %h3#bkmks.a Bookmarks
+          %i.fa.fa-book
+          %h3#subs.a Subscriptions
+          .subs
+            =raw subscription_menu_items(@subscriptions_title)
+            =link_to 'All', subscriptions_path
+
+          .bkmks
+            =raw bookmark_menu_items(@bookmarks_title)
+            %br
+            =link_to 'All', bookmarks_path
 
         - else
           = link_to 'Sign up', new_user_registration_path
@@ -45,5 +52,3 @@
     .container
       #main_page_content  
       = yield
-
-    .footer
