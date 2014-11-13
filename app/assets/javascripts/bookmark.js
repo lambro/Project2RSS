@@ -19,7 +19,7 @@ function bookmark(){
   }).success(function(data){
     $this.removeClass('bookmark-article')
     $this.addClass('bookmarked')
-    $this.attr('data-id', data.id)
+    $this.data('id', data.id)
     console.log(data.id)
   })
 }
@@ -37,7 +37,7 @@ function unBookmark(){
     console.log('hey')
     $this.removeClass('bookmarked')
     $this.addClass('rebookmark')
-    $this.attr('data-id', $bookmarkId)
+    $this.data('id', $bookmarkId)
   })
 }
 
