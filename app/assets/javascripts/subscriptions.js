@@ -11,7 +11,9 @@ function request(method, url, data){
 function subscribe(){
   $this = $(this)
   $feedId = $this.data("id");
+  console.log('clicked')
   request("POST", "/subscriptions", {subscription:{feed_id:$feedId}}).success(function(data){
+    console.log(data)
     $this.removeClass('subscription-feed')
     $this.addClass('subscribed')
     $this.data('id', data.id)

@@ -10,5 +10,4 @@ class Subscription < ActiveRecord::Base
       Feed.find(x.id).title
     end  
   end
-
 end

@@ -7,10 +7,9 @@
     %th
     %th
     %th
-
-  - @subscriptions.each do |subscription|
+  -current_user.subscriptions.each do |subscription|
     %tr
-      %td= subscription.user_id
+      %td= subscription.feed.title
       %td= subscription.feed_id
       %td= link_to 'Show', subscription
       %td= link_to 'Edit', edit_subscription_path(subscription)

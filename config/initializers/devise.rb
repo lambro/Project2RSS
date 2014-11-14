@@ -53,14 +53,14 @@ Devise.setup do |config|
   # given strategies, for example, `config.params_authenticatable = [:database]` will
   # enable it only for database (email + password) authentication.
   # config.params_authenticatable = true
-  config.omniauth :google_oauth2, ENV["GOOGLE_AUTH_CLIENT_ID_H"], ENV["GOOGLE_AUTH_CLIENT_SECRET_H"], scope: "email, profile", client_options: { image_aspect_ratio: "square",
+  config.omniauth :google_oauth2, ENV["GOOGLE_AUTH_CLIENT_ID"], ENV["GOOGLE_AUTH_CLIENT_SECRET"], scope: "email, profile", client_options: { image_aspect_ratio: "square",
     image_aspect_ratio: "square",
     image_size: 30
   }
 
   config.omniauth :twitter, ENV["TWITTER_ID"], ENV["TWITTER_SECRET"]
   
-  config.omniauth :facebook, ENV["FACEBOOK_ID"], ENV["FACEBOOK_SECRET"],
+  config.omniauth :facebook, ENV["FACEBOOK_ID_L"], ENV["FACEBOOK_SECRET_L"],
   :scope => 'email,user_birthday,read_stream', :display => 'popup'
 
   # Tell if authentication through HTTP Auth is enabled. False by default.

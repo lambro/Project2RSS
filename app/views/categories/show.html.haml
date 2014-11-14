@@ -16,10 +16,16 @@
     .feeds_container
       %h1
         = link_to c.title, c
-      %span.fa-stack.fa-lg.subscription-feed{"data-id" => c.id}
-        %i.fa.fa-square-o.fa-stack-2x
-        %i.fa.fa-check.fa-stack-1x.not-checked
-      Subscibed?
+      -if c.subscriptions.present?
+        %span.fa-stack.fa-lg.subscribed{"data-id" => c.subscriptions.last.id}
+          %i.fa.fa-square-o.fa-stack-2x
+          %i.fa.fa-check.fa-stack-1x.not-checked
+        Subscribed?
+      -else
+        %span.fa-stack.fa-lg.subscription-feed{"data-id" => c.id}
+          %i.fa.fa-square-o.fa-stack-2x
+          %i.fa.fa-check.fa-stack-1x.not-checked
+        Subscribed?        
 
 
 
