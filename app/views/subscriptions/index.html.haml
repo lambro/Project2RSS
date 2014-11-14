@@ -1,20 +1,10 @@
-%h1 Subscriptions
+%h1 Your Subscriptions
 
-%table
+- @subscriptions_title.each do |subscription|
   %tr
-    %th User
-    %th Feed
-    %th
-    %th
-    %th
-  -current_user.subscriptions.each do |subscription|
-    %tr
-      %td= subscription.feed.title
-      %td= subscription.feed_id
-      %td= link_to 'Show', subscription
-      %td= link_to 'Edit', edit_subscription_path(subscription)
-      %td= link_to 'Destroy', subscription, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    %td= link_to subscription[1], subscription[0]
+    %br
 
 %br
 
-= link_to 'New Subscription', new_subscription_path
+= link_to 'Back to Categories', root_path

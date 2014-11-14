@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :authenticate_user!
   before_filter :set_bookmark_variables
+  before_filter :set_subscription_variables
   # def after_sign_in_path_for(user)
     
   # end
@@ -20,8 +21,10 @@ class ApplicationController < ActionController::Base
   def set_subscription_variables
     if current_user.present?
       @subscriptions = current_user.subscriptions
-      subscription_title = Feed.subscription_title(@subscriptions)
-      @subscriptions_title = @subscriptions.zip(subscription_title)
+      subscription_title = Subscription.subscription_title(@subscriptions)
+      @subscriptions_title = @subscriptions.zip(
+        subscription_title)
+      puts "debug"
     end
   end
 
