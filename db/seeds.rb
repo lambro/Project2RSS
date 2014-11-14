@@ -36,6 +36,8 @@ f13 = Feed.create!(url:"http://sports.yahoo.com/soccer//rss.xml",title:"Yahoo Sp
 f14 = Feed.create!(url:"http://www.telegraph.co.uk/news/politics/rss",title:"Telegraph",category_id:c4.id)
 f15 = Feed.create!(url:"http://www.economist.com/sections/leaders/rss",title:"Economist",category_id:c4.id)
 f16 = Feed.create!(url:"http://pan.oxfordjournals.org/rss/current.xml",title:"Oxford Journals",category_id:c4.id)
+f17 = Feed.create!(url:"http://www.telegraph.co.uk/culture/music/rss",title:"Telegraph Music",category_id:c5.id)
+f18 = Feed.create!(url:"http://www.telegraph.co.uk/culture/art/rss",title:"Telegraph Art",category_id:c5.id)
 
 
 
