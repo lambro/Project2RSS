@@ -1,4 +1,4 @@
-<h1>RSS - FEED.me - APP</h1>
+~~~~ RSS - FEED.me - APP ~~~~
 
 This is an app that was created in a pair during week 8 of the General Assembly Web Development Intensive Course. 
 
@@ -7,7 +7,7 @@ This app uses gems including 'Feedjira' and 'Carrierwave'.
 
 This project was created to display up to date articles / entries using RSS, giving the user the ability to bookmark articles and subscribe to feeds. The user needs to log in before accessing the content, and can up load a picture to their user account.
 
-<h3>Installation</h3>
+~~~~ Installation ~~~~~
 
 Run bundle, 'rake db:seed', and 'rake db:migrate' to kick things off, then to populate the entries run the rake task:
 
@@ -18,5 +18,5 @@ namespace :rss do
   end
 end
 
-<h3>Authors</h3>
+~~~~ Authors ~~~~
 Benjamin Cranwell and Laura Ambrose
