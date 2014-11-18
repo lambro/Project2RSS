@@ -20,8 +20,6 @@ $(function(){
   $("#bkmks").click(function(){
     $(".bkmks").slideToggle()
   })
-
-
 })
 
 

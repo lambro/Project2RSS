@@ -5,16 +5,14 @@
 // font-family: 'Hind', sans-serif;
 // font-family: 'Over the Rainbow', cursive;
 
-
-// ---- global shiz ----
 *{
   box-sizing: border-box;
   font-family: 'Hind', sans-serif;
 }
 
-// body{
-//   background-color:black;
-// }
+#galleryherepls{
+  padding-bottom: 100px;
+}
 
 // feed me logo
 h1{
@@ -47,8 +45,6 @@ a, .a{
   font-size: 2em;
 }
 
-
-// --- general and main page header settings ----
 .header{
   border-bottom: dashed 2px rgba(164, 33, 26, 1.0);
   font-family: 'Atomic Age', cursive;
@@ -77,6 +73,9 @@ a, .a{
       color: rgba(164, 33, 26, 1.0);
     }
   }
+  h2{
+    text-align: center;
+  }
 }
 
 #notice, #flash_alert, #flash_notice, #flash_timeout{
@@ -84,9 +83,6 @@ a, .a{
   margin-left:5%;
 }
 
-// ----page specific ----
-
-// ---- articles page ----
 .article{
   padding-top: 1%;
   padding-bottom: 1%;
@@ -106,13 +102,6 @@ a, .a{
     }
 }
 
-// ---- categories show page ----
-
-
-
-
-// ---- log in / sign up page ----
-
 input{
   border-radius: 10px;
   text-align:center;
@@ -124,7 +113,6 @@ input{
 }
 
 #links{
-  // background-color:red;
   font-family: 'Offside', cursive;
   a{
     font-family: 'Offside', cursive;
@@ -157,7 +145,6 @@ input{
     margin-left: 1%;
   }
 }
-// ----categories index page ----
 
 .container{
   margin-bottom:10px;
@@ -166,7 +153,6 @@ input{
   }
 }
 
-// ----categories show page ----
 .category_header{
   height:250px;
   overflow: hidden;
@@ -192,6 +178,7 @@ input{
     font-size: 5em;
     -webkit-text-stroke: rgba(60, 92, 137, 1.0);
     background-color:rgba(60, 92, 137, 0.3);
+    font-family: 'The Girl Next Door', cursive;
     }
 }
 
@@ -214,8 +201,6 @@ input{
     }
   }
 }
-
-// ----navigation bar----
 
 .user-nav{
   width:100%;
@@ -270,6 +255,3 @@ input{
   position:relative;
   padding:0;
 }
-
-
-

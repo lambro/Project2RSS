@@ -3,13 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!
   before_filter :set_bookmark_variables
   before_filter :set_subscription_variables
-  # def after_sign_in_path_for(user)
-    
-  # end
 
-  # def after_sign_out_path_for(user)
-    
-  # end
   def set_bookmark_variables
     if current_user.present?
       @bookmarks = current_user.bookmarks
@@ -29,11 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def feed_url
-
-  
-    
   end
-
 end
 
 
